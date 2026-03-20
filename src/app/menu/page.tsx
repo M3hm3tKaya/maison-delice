@@ -57,12 +57,12 @@ export default function MenuPage() {
       <section className="py-16 sm:py-20 bg-warm-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
             {filterCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-6 py-2.5 rounded-sm text-sm font-medium tracking-wide transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-2.5 min-h-[44px] rounded-sm text-sm font-medium tracking-wide transition-all duration-300 ${
                   activeFilter === cat
                     ? "bg-chocolate text-warm-white"
                     : "bg-cream text-dark-brown/70 hover:bg-sand/30 hover:text-dark-brown"
@@ -74,7 +74,7 @@ export default function MenuPage() {
           </div>
 
           {/* Product Grid */}
-          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item) => (
                 <motion.div
@@ -93,7 +93,7 @@ export default function MenuPage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
                     <div className="flex items-start justify-between gap-4 mb-2">
                       <h3 className="font-[family-name:var(--font-playfair-display)] text-lg text-dark-brown">
                         {item.name}
@@ -120,7 +120,7 @@ export default function MenuPage() {
 
       {/* CTA */}
       <section className="py-16 bg-dark-brown text-center">
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <SectionTitle
             title="Özel Sipariş Vermek İster Misiniz?"
             subtitle="Doğum günleri, düğünler ve özel etkinlikler için kişiye özel pasta siparişi verin."
@@ -128,7 +128,7 @@ export default function MenuPage() {
           />
           <a
             href="/siparis"
-            className="inline-block mt-4 px-8 py-4 bg-sand text-dark-brown font-medium rounded-sm hover:bg-sand/90 transition-all duration-300"
+            className="inline-block mt-4 px-6 sm:px-8 py-4 min-h-[44px] bg-sand text-dark-brown font-medium rounded-sm hover:bg-sand/90 transition-all duration-300"
           >
             Sipariş Ver
           </a>

@@ -15,7 +15,7 @@ export default function SectionTitle({ title, subtitle, light = false }: Section
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="text-center mb-12"
+      className="text-center mb-8 sm:mb-12"
     >
       <h2
         className={`font-[family-name:var(--font-playfair-display)] text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4 ${

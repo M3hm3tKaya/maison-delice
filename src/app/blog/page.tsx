@@ -91,22 +91,22 @@ export default function BlogPage() {
       {/* Blog Grid */}
       <section className="py-16 sm:py-20 bg-warm-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
             {blogPosts.map((post, index) => (
               <AnimatedSection key={post.slug} delay={index * 0.1}>
                 <article className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-500 border border-cream">
                   <div className="placeholder-img aspect-[16/9]">
                     <span className="relative z-10 text-warm-white/80 text-sm">{post.title}</span>
                   </div>
-                  <div className="p-6 sm:p-8">
-                    <div className="flex items-center gap-3 mb-4">
+                  <div className="p-4 sm:p-6 md:p-8">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
                       <span className={`text-xs px-3 py-1 rounded-full ${categoryColors[post.category] || "bg-cream text-dark-brown"}`}>
                         {post.category}
                       </span>
                       <span className="text-dark-brown/40 text-xs">{post.date}</span>
                       <span className="text-dark-brown/40 text-xs">&bull; {post.readTime}</span>
                     </div>
-                    <h3 className="font-[family-name:var(--font-playfair-display)] text-xl sm:text-2xl text-dark-brown mb-3 group-hover:text-chocolate transition-colors duration-300">
+                    <h3 className="font-[family-name:var(--font-playfair-display)] text-lg sm:text-xl md:text-2xl text-dark-brown mb-3 group-hover:text-chocolate transition-colors duration-300">
                       {post.title}
                     </h3>
                     <p className="text-dark-brown/60 text-sm leading-relaxed mb-4">
@@ -138,9 +138,9 @@ export default function BlogPage() {
             <input
               type="email"
               placeholder="E-posta adresiniz"
-              className="flex-1 px-4 py-3 bg-warm-white/10 border border-warm-white/20 rounded-sm text-warm-white placeholder:text-warm-white/40 focus:outline-none focus:border-sand transition-colors duration-300"
+              className="flex-1 min-w-0 px-4 py-3 min-h-[44px] bg-warm-white/10 border border-warm-white/20 rounded-sm text-warm-white placeholder:text-warm-white/40 focus:outline-none focus:border-sand transition-colors duration-300"
             />
-            <button className="px-6 py-3 bg-sand text-dark-brown font-medium rounded-sm hover:bg-sand/90 transition-colors duration-300">
+            <button className="px-6 py-3 min-h-[44px] bg-sand text-dark-brown font-medium rounded-sm hover:bg-sand/90 transition-colors duration-300 whitespace-nowrap">
               Abone Ol
             </button>
           </div>

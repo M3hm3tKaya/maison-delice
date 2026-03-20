@@ -73,20 +73,20 @@ export default function HakkimizdaPage() {
 
           <div className="relative mt-16">
             {/* Line */}
-            <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-sand/30 -translate-x-1/2" />
+            <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-sand/30 sm:-translate-x-1/2" />
 
             {timelineEvents.map((event, index) => (
               <AnimatedSection key={event.year} delay={index * 0.1}>
                 <div
-                  className={`relative flex items-start gap-8 mb-12 ${
+                  className={`relative flex items-start gap-4 sm:gap-8 mb-10 sm:mb-12 ${
                     index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
                   }`}
                 >
                   {/* Dot */}
-                  <div className="absolute left-4 sm:left-1/2 w-4 h-4 bg-sand rounded-full -translate-x-1/2 border-4 border-warm-white z-10" />
+                  <div className="absolute left-4 sm:left-1/2 w-3 h-3 sm:w-4 sm:h-4 bg-sand rounded-full -translate-x-1/2 border-2 sm:border-4 border-warm-white z-10 mt-1.5 sm:mt-0" />
 
                   {/* Content */}
-                  <div className={`ml-12 sm:ml-0 sm:w-1/2 ${index % 2 === 0 ? "sm:pr-12 sm:text-right" : "sm:pl-12"}`}>
+                  <div className={`ml-10 sm:ml-0 sm:w-1/2 ${index % 2 === 0 ? "sm:pr-12 sm:text-right" : "sm:pl-12"}`}>
                     <span className="text-sand font-semibold text-lg">{event.year}</span>
                     <h3 className="font-[family-name:var(--font-playfair-display)] text-xl text-dark-brown mt-1 mb-2">
                       {event.title}
@@ -110,10 +110,10 @@ export default function HakkimizdaPage() {
             subtitle="Her ürünümüzün arkasındaki temel ilkelerimiz"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mt-12">
             {values.map((value, index) => (
               <AnimatedSection key={value.title} delay={index * 0.15}>
-                <div className="bg-warm-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow duration-500">
+                <div className="bg-warm-white rounded-lg p-6 sm:p-8 text-center hover:shadow-lg transition-shadow duration-500 overflow-hidden">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-cream text-chocolate mb-6">
                     {value.icon}
                   </div>
@@ -135,7 +135,7 @@ export default function HakkimizdaPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <AnimatedSection>
-              <div className="placeholder-img aspect-[3/4] rounded-lg max-w-md mx-auto lg:mx-0">
+              <div className="placeholder-img aspect-[3/4] rounded-lg w-full max-w-sm sm:max-w-md mx-auto lg:mx-0 overflow-hidden">
                 <span className="relative z-10 text-warm-white/80 text-sm">Şef Deniz Aydın</span>
               </div>
             </AnimatedSection>
@@ -157,19 +157,19 @@ export default function HakkimizdaPage() {
                 &ldquo;Her pasta bir hikaye anlatır. Benim amacım, her lokmada
                 Paris&apos;in büyüsünü İstanbul&apos;un sıcaklığıyla birleştirmek.&rdquo;
               </p>
-              <div className="flex items-center gap-6 mt-8">
-                <div className="text-center">
-                  <span className="block font-[family-name:var(--font-playfair-display)] text-2xl text-chocolate">15+</span>
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 mt-8">
+                <div className="text-center min-w-[60px]">
+                  <span className="block font-[family-name:var(--font-playfair-display)] text-xl sm:text-2xl text-chocolate">15+</span>
                   <span className="text-dark-brown/50 text-xs uppercase tracking-wider">Yıl Deneyim</span>
                 </div>
-                <div className="w-px h-12 bg-sand/30" />
-                <div className="text-center">
-                  <span className="block font-[family-name:var(--font-playfair-display)] text-2xl text-chocolate">50+</span>
+                <div className="w-px h-10 sm:h-12 bg-sand/30" />
+                <div className="text-center min-w-[60px]">
+                  <span className="block font-[family-name:var(--font-playfair-display)] text-xl sm:text-2xl text-chocolate">50+</span>
                   <span className="text-dark-brown/50 text-xs uppercase tracking-wider">Özel Tarif</span>
                 </div>
-                <div className="w-px h-12 bg-sand/30" />
-                <div className="text-center">
-                  <span className="block font-[family-name:var(--font-playfair-display)] text-2xl text-chocolate">3</span>
+                <div className="w-px h-10 sm:h-12 bg-sand/30" />
+                <div className="text-center min-w-[60px]">
+                  <span className="block font-[family-name:var(--font-playfair-display)] text-xl sm:text-2xl text-chocolate">3</span>
                   <span className="text-dark-brown/50 text-xs uppercase tracking-wider">Ödül</span>
                 </div>
               </div>

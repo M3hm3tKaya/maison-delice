@@ -114,7 +114,7 @@ export default function IletisimPage() {
                 </div>
 
                 {/* Map Placeholder */}
-                <div className="placeholder-img aspect-[16/10] rounded-lg">
+                <div className="placeholder-img aspect-[16/10] rounded-lg overflow-hidden">
                   <div className="relative z-10 flex flex-col items-center gap-2">
                     <svg className="w-10 h-10 text-warm-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -141,13 +141,13 @@ export default function IletisimPage() {
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="px-6 py-3 bg-chocolate text-warm-white rounded-sm hover:bg-dark-brown transition-colors duration-300"
+                    className="px-6 py-3 min-h-[44px] bg-chocolate text-warm-white rounded-sm hover:bg-dark-brown transition-colors duration-300"
                   >
                     Yeni Mesaj
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="bg-cream rounded-lg p-8 sm:p-12 space-y-6">
+                <form onSubmit={handleSubmit} className="bg-cream rounded-lg p-4 sm:p-8 md:p-12 space-y-6 overflow-hidden">
                   <h3 className="font-[family-name:var(--font-playfair-display)] text-2xl text-dark-brown mb-2">
                     Bize Yazın
                   </h3>
@@ -155,7 +155,7 @@ export default function IletisimPage() {
                     Aşağıdaki formu doldurarak bize mesaj gönderebilirsiniz.
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <label className="block text-sm font-medium text-dark-brown/70 mb-2">
                         İsim Soyisim *
@@ -166,7 +166,7 @@ export default function IletisimPage() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-sand/30 rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                        className="w-full px-4 py-3 min-h-[44px] border border-sand/30 rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                         placeholder="Adınız Soyadınız"
                       />
                     </div>
@@ -180,7 +180,7 @@ export default function IletisimPage() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-sand/30 rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                        className="w-full px-4 py-3 min-h-[44px] border border-sand/30 rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                         placeholder="email@ornek.com"
                       />
                     </div>
@@ -195,7 +195,7 @@ export default function IletisimPage() {
                       required
                       value={formData.subject}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-sand/30 rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                      className="w-full px-4 py-3 min-h-[44px] border border-sand/30 rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                     >
                       <option value="">Seçiniz</option>
                       <option value="Genel Bilgi">Genel Bilgi</option>
@@ -216,14 +216,14 @@ export default function IletisimPage() {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-sand/30 rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300 resize-none"
+                      className="w-full px-4 py-3 min-h-[44px] border border-sand/30 rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300 resize-none"
                       placeholder="Mesajınızı buraya yazabilirsiniz..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-4 bg-chocolate text-warm-white font-medium rounded-sm hover:bg-dark-brown transition-colors duration-300 tracking-wide"
+                    className="w-full py-4 min-h-[44px] bg-chocolate text-warm-white font-medium rounded-sm hover:bg-dark-brown transition-colors duration-300 tracking-wide"
                   >
                     Mesaj Gönder
                   </button>

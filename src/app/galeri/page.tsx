@@ -53,12 +53,12 @@ export default function GaleriPage() {
       <section className="py-16 sm:py-20 bg-warm-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Filters */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
             {galleryFilters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-2.5 rounded-sm text-sm font-medium tracking-wide transition-all duration-300 ${
+                className={`px-4 sm:px-6 py-2.5 min-h-[44px] rounded-sm text-sm font-medium tracking-wide transition-all duration-300 ${
                   activeFilter === filter
                     ? "bg-chocolate text-warm-white"
                     : "bg-cream text-dark-brown/70 hover:bg-sand/30 hover:text-dark-brown"
@@ -70,7 +70,7 @@ export default function GaleriPage() {
           </div>
 
           {/* Masonry Grid */}
-          <motion.div layout className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+          <motion.div layout className="columns-1 sm:columns-2 lg:columns-3 gap-3 sm:gap-4 space-y-3 sm:space-y-4">
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item) => (
                 <motion.div
@@ -111,7 +111,7 @@ export default function GaleriPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-dark-brown/90 backdrop-blur-sm p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-dark-brown/90 backdrop-blur-sm p-4 overflow-hidden"
             onClick={() => setLightboxItem(null)}
           >
             <motion.div
@@ -119,7 +119,7 @@ export default function GaleriPage() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative max-w-4xl w-full"
+              className="relative max-w-4xl w-full max-h-[90vh] overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="placeholder-img aspect-[4/3] rounded-lg">
@@ -133,7 +133,7 @@ export default function GaleriPage() {
               </div>
               <button
                 onClick={() => setLightboxItem(null)}
-                className="absolute -top-4 -right-4 w-10 h-10 bg-warm-white rounded-full flex items-center justify-center text-dark-brown hover:bg-sand transition-colors duration-300"
+                className="absolute top-2 right-2 sm:-top-4 sm:-right-4 w-11 h-11 min-w-[44px] min-h-[44px] bg-warm-white rounded-full flex items-center justify-center text-dark-brown hover:bg-sand transition-colors duration-300 z-20"
                 aria-label="Kapat"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

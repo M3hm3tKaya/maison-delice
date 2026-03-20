@@ -92,11 +92,11 @@ export default function SiparisPage() {
       {/* Steps */}
       <section className="py-16 bg-warm-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {steps.map((step, index) => (
               <AnimatedSection key={step.number} delay={index * 0.15}>
                 <div className="text-center">
-                  <span className="font-[family-name:var(--font-playfair-display)] text-5xl text-sand/30 block mb-4">
+                  <span className="font-[family-name:var(--font-playfair-display)] text-4xl sm:text-5xl text-sand/30 block mb-4">
                     {step.number}
                   </span>
                   <h3 className="font-[family-name:var(--font-playfair-display)] text-xl text-dark-brown mb-2">
@@ -127,19 +127,19 @@ export default function SiparisPage() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="px-6 py-3 bg-chocolate text-warm-white rounded-sm hover:bg-dark-brown transition-colors duration-300"
+                  className="px-6 py-3 min-h-[44px] bg-chocolate text-warm-white rounded-sm hover:bg-dark-brown transition-colors duration-300"
                 >
                   Yeni Sipariş
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-warm-white rounded-lg p-8 sm:p-12 shadow-sm space-y-6">
+              <form onSubmit={handleSubmit} className="bg-warm-white rounded-lg p-4 sm:p-8 md:p-12 shadow-sm space-y-6 overflow-hidden">
                 <h3 className="font-[family-name:var(--font-playfair-display)] text-2xl text-dark-brown text-center mb-8">
                   Sipariş Formu
                 </h3>
 
                 {/* Personal Info */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-sm font-medium text-dark-brown/70 mb-2">
                       İsim Soyisim *
@@ -150,7 +150,7 @@ export default function SiparisPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                      className="w-full px-4 py-3 min-h-[44px] border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                       placeholder="Adınız Soyadınız"
                     />
                   </div>
@@ -164,7 +164,7 @@ export default function SiparisPage() {
                       required
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                      className="w-full px-4 py-3 min-h-[44px] border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                       placeholder="+90 (5XX) XXX XX XX"
                     />
                   </div>
@@ -180,13 +180,13 @@ export default function SiparisPage() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                    className="w-full px-4 py-3 min-h-[44px] border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                     placeholder="email@ornek.com"
                   />
                 </div>
 
                 {/* Event Details */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-sm font-medium text-dark-brown/70 mb-2">
                       Etkinlik Türü *
@@ -196,7 +196,7 @@ export default function SiparisPage() {
                       required
                       value={formData.eventType}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                      className="w-full px-4 py-3 min-h-[44px] border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                     >
                       <option value="">Seçiniz</option>
                       {eventTypes.map((type) => (
@@ -214,12 +214,12 @@ export default function SiparisPage() {
                       required
                       value={formData.date}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                      className="w-full px-4 py-3 min-h-[44px] border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-sm font-medium text-dark-brown/70 mb-2">
                       Kişi Sayısı *
@@ -231,7 +231,7 @@ export default function SiparisPage() {
                       min="1"
                       value={formData.guestCount}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                      className="w-full px-4 py-3 min-h-[44px] border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                       placeholder="10"
                     />
                   </div>
@@ -243,7 +243,7 @@ export default function SiparisPage() {
                       name="tiers"
                       value={formData.tiers}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                      className="w-full px-4 py-3 min-h-[44px] border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                     >
                       <option value="">Seçiniz</option>
                       {cakeTiers.map((tier) => (
@@ -259,7 +259,7 @@ export default function SiparisPage() {
                       name="flavor"
                       value={formData.flavor}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
+                      className="w-full px-4 py-3 min-h-[44px] border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300"
                     >
                       <option value="">Seçiniz</option>
                       {cakeFlavors.map((flavor) => (
@@ -278,14 +278,14 @@ export default function SiparisPage() {
                     rows={4}
                     value={formData.specialRequest}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300 resize-none"
+                    className="w-full px-4 py-3 min-h-[44px] border border-cream rounded-sm bg-warm-white text-dark-brown focus:outline-none focus:border-sand transition-colors duration-300 resize-none"
                     placeholder="Tasarım, tema, alerjiler veya özel notlarınızı yazabilirsiniz..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-chocolate text-warm-white font-medium rounded-sm hover:bg-dark-brown transition-colors duration-300 tracking-wide"
+                  className="w-full py-4 min-h-[44px] bg-chocolate text-warm-white font-medium rounded-sm hover:bg-dark-brown transition-colors duration-300 tracking-wide"
                 >
                   Sipariş Gönder
                 </button>

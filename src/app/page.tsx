@@ -78,7 +78,7 @@ export default function HomePage() {
             transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <motion.h1
-              className="font-[family-name:var(--font-great-vibes)] text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-warm-white mb-6"
+              className="font-[family-name:var(--font-great-vibes)] text-4xl sm:text-6xl md:text-7xl lg:text-9xl text-warm-white mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -91,13 +91,13 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex items-center justify-center gap-4 mb-8"
+            className="flex items-center justify-center gap-2 sm:gap-4 mb-8 px-4"
           >
-            <span className="w-12 h-px bg-sand" />
-            <p className="font-[family-name:var(--font-playfair-display)] text-sand text-lg sm:text-xl tracking-[0.3em] uppercase">
+            <span className="w-8 sm:w-12 h-px bg-sand hidden sm:block" />
+            <p className="font-[family-name:var(--font-playfair-display)] text-sand text-sm sm:text-lg md:text-xl tracking-[0.15em] sm:tracking-[0.3em] uppercase">
               Artisan Patisserie &bull; Istanbul
             </p>
-            <span className="w-12 h-px bg-sand" />
+            <span className="w-8 sm:w-12 h-px bg-sand hidden sm:block" />
           </motion.div>
 
           <motion.p
@@ -118,13 +118,13 @@ export default function HomePage() {
           >
             <Link
               href="/menu"
-              className="inline-block px-8 py-4 bg-sand text-dark-brown font-medium rounded-sm tracking-wide hover:bg-sand/90 transition-all duration-300 hover:shadow-lg"
+              className="inline-block px-6 sm:px-8 py-4 min-h-[44px] bg-sand text-dark-brown font-medium rounded-sm tracking-wide hover:bg-sand/90 transition-all duration-300 hover:shadow-lg text-center"
             >
               Menüyü Keşfet
             </Link>
             <Link
               href="/siparis"
-              className="inline-block px-8 py-4 border border-sand/50 text-sand rounded-sm tracking-wide hover:bg-sand/10 transition-all duration-300"
+              className="inline-block px-6 sm:px-8 py-4 min-h-[44px] border border-sand/50 text-sand rounded-sm tracking-wide hover:bg-sand/10 transition-all duration-300 text-center"
             >
               Sipariş Ver
             </Link>
@@ -132,7 +132,7 @@ export default function HomePage() {
         </div>
 
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:block"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
@@ -155,7 +155,7 @@ export default function HomePage() {
             subtitle="Şef'imizin özel tariflerinden doğan, her biri birer sanat eseri olan imza tatlarımız"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mt-12">
             {signatureProducts.map((product, index) => (
               <AnimatedSection key={product.name} delay={index * 0.15}>
                 <div className="group cursor-pointer">
@@ -214,7 +214,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/hakkimizda"
-                className="inline-flex items-center gap-2 text-chocolate font-medium hover:text-sand transition-colors duration-300 group"
+                className="inline-flex items-center gap-2 text-chocolate font-medium hover:text-sand transition-colors duration-300 group min-h-[44px]"
               >
                 Devamını Oku
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -234,12 +234,12 @@ export default function HomePage() {
             subtitle="Her damak tadına uygun, özenle hazırlanmış lezzet seçeneklerimiz"
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-12">
             {categories.map((cat, index) => (
               <AnimatedSection key={cat.name} delay={index * 0.1}>
                 <Link
                   href="/menu"
-                  className="group relative block aspect-[16/9] rounded-lg overflow-hidden"
+                  className="group relative block aspect-[16/9] rounded-lg overflow-hidden min-h-[44px]"
                 >
                   <img
                     src={cat.image}
@@ -272,11 +272,11 @@ export default function HomePage() {
 
           <div className="relative mt-12">
             <AnimatedSection>
-              <div className="bg-warm-white/5 backdrop-blur-sm border border-warm-white/10 rounded-lg p-8 sm:p-12 text-center">
-                <svg className="w-10 h-10 text-sand/40 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+              <div className="bg-warm-white/5 backdrop-blur-sm border border-warm-white/10 rounded-lg p-4 sm:p-8 md:p-12 text-center overflow-hidden">
+                <svg className="w-8 sm:w-10 h-8 sm:h-10 text-sand/40 mx-auto mb-4 sm:mb-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
-                <p className="text-warm-white/80 text-lg sm:text-xl leading-relaxed mb-8 italic">
+                <p className="text-warm-white/80 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8 italic">
                   &ldquo;{testimonials[currentTestimonial].text}&rdquo;
                 </p>
                 <p className="text-sand font-[family-name:var(--font-playfair-display)] text-lg">
@@ -293,13 +293,15 @@ export default function HomePage() {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  className={`min-w-[44px] min-h-[44px] flex items-center justify-center transition-all duration-300`}
+                  aria-label={`Yorum ${index + 1}`}
+                >
+                  <span className={`block h-2.5 rounded-full transition-all duration-300 ${
                     index === currentTestimonial
                       ? "bg-sand w-8"
-                      : "bg-warm-white/20 hover:bg-warm-white/40"
-                  }`}
-                  aria-label={`Yorum ${index + 1}`}
-                />
+                      : "bg-warm-white/20 hover:bg-warm-white/40 w-2.5"
+                  }`} />
+                </button>
               ))}
             </div>
           </div>
@@ -314,12 +316,12 @@ export default function HomePage() {
             subtitle="@maisondelice ile bizi takip edin"
           />
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mt-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 mt-12">
             {[1, 2, 3, 4, 5, 6].map((item) => (
               <AnimatedSection key={item} delay={item * 0.08}>
                 <a
                   href="#"
-                  className="group relative block aspect-square rounded-lg overflow-hidden"
+                  className="group relative block aspect-square rounded-lg overflow-hidden min-h-[44px]"
                 >
                   <img
                     src={`/images/menu-item-${item}.png`}

@@ -79,7 +79,7 @@ export default function Navbar() {
           {/* Mobile Hamburger */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden flex flex-col gap-1.5 p-2 group"
+            className="lg:hidden flex flex-col gap-1.5 p-3 min-w-[44px] min-h-[44px] items-center justify-center group"
             aria-label="Menü"
           >
             <span
@@ -125,7 +125,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={clsx(
-                      "block px-4 py-3 rounded-lg text-base transition-colors duration-200",
+                      "block px-4 py-3 min-h-[44px] flex items-center rounded-lg text-base transition-colors duration-200",
                       pathname === link.href
                         ? "bg-cream text-chocolate font-medium"
                         : "text-dark-brown/70 hover:bg-cream/50 hover:text-chocolate"
